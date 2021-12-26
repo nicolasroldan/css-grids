@@ -1,0 +1,99 @@
+// .container {
+//   background-color: #eee;
+//   max-width: 1000px;
+//   margin: 30px auto;
+
+//   display: grid;
+//   grid-template-rows: 1fr 2fr 4fr 1fr;
+//   grid-template-columns: repeat(3, 1fr) .5fr;
+//   gap: 30px;
+
+//   & > * {
+//     padding: 20px;
+//     font-size: 30px;
+//     font-family: sans-serif;
+//     color: white;
+//     background-color: red;
+//   }
+  
+//   .headerer {
+//     grid-column: 1 / -1;
+//   }
+ 
+//   .sidebarbar {
+//     grid-column: 4 / 5;
+//     grid-row: 2 / 4;
+//   }
+
+//   .main-content {
+//     grid-column: 1 / 4;
+//   }
+  
+//   .footer {
+//     grid-column: 1 / -1;
+//   }
+// }
+
+.container {
+  background-color: #eee;
+  max-width: 1000px;
+  margin: 30px auto;
+
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr 1fr;
+  grid-template-columns: repeat(3, 1fr) .5fr;
+  gap: 30px;
+  grid-template-areas: "header header header header"
+                       "box-1 box-2 box-3 sidebar"
+                       "main main main sidebar"
+                       "footer footer footer footer";
+
+  // Alinea los hijos individualmente
+
+  align-items: center;
+  justify-items: center;
+
+  // Alinea el container como en flexbox
+
+  // justify-content: center;
+  // align-content: center;
+
+  & > * {
+    padding: 20px;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: white;
+    background-color: red;
+  }
+  
+  .header {
+    grid-area: header;
+  }
+
+  .box-1 {
+    grid-area: box-1;
+  }
+
+  .box-2 {
+    grid-area: box-2;
+  }
+
+  .box-3 {
+    grid-area: box-3;
+    // Alinea uno en particular
+    align-self: end;
+    justify-self: end;
+  }
+ 
+  .sidebar {
+    grid-area: sidebar;
+  }
+
+  .main-content {
+    grid-area: main;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+}

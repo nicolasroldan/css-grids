@@ -1,0 +1,77 @@
+.container {
+  background-color: #eee;
+  max-width: 1000px;
+  margin: 30px auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr 4fr 1fr;
+      grid-template-rows: 1fr 2fr 4fr 1fr;
+  -ms-grid-columns: (1fr)[3] 0.5fr;
+      grid-template-columns: repeat(3, 1fr) 0.5fr;
+  gap: 30px;
+      grid-template-areas: "header header header header" "box-1 box-2 box-3 sidebar" "main main main sidebar" "footer footer footer footer";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.container > * {
+  padding: 20px;
+  font-size: 30px;
+  font-family: sans-serif;
+  color: white;
+  background-color: red;
+}
+
+.container .header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: header;
+}
+
+.container .box-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: box-1;
+}
+
+.container .box-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: box-2;
+}
+
+.container .box-3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: box-3;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.container .sidebar {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: sidebar;
+}
+
+.container .main-content {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+}
+
+.container .footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+}
+/*# sourceMappingURL=styles.css.map */
